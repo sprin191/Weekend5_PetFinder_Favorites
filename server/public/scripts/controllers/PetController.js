@@ -1,8 +1,9 @@
 myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
     $scope.animal = '';
     $scope.pet = {};
-    $scope.totalFavs = 0;
     $scope.hidden = true;
+    $scope.totalFavs = 0;
+    $scope.favInfo = {};
 
     $scope.changeAnimal = function() {
         console.log($scope.animal);
@@ -34,6 +35,21 @@ myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
         );
     };
 
+
+    $scope.submitFavorite = function () {
+        $scope.favInfo = {
+          petID: $scope.pet.id.$t,
+          name: $scope.pet.name.$t,
+          image: $scope.pet.media.photos.photo[2].$t,
+          description: $scope.pet.description.$t
+        };
+        var data = $scope.favInfo;
+        console.log(data);
+        $http.post('/favorite', data)
+          .then(function () {
+            console.log('POST /favorite');
+          });
+      };
     /*$scope.saveFavorite = function() {
         var favorite = {
             petID: $scope.pet.id.$t,

@@ -5,6 +5,8 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 // modules
+var favorite = require('./routes/favorite');
+var index = require('./routes/index');
 
 // middleware
 app.use(express.static(path.join(__dirname, './public')));
@@ -15,6 +17,10 @@ app.use(bodyParser.json());
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, './public/views/index.html'));
 });
+
+// express routes
+app.use('/favorite', favorite);
+app.use('/', index);
 
 // mongoose connection
 var databaseURI = 'mongodb://localhost:27017/mu';
