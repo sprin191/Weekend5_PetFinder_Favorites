@@ -8,7 +8,7 @@ myApp.config(['$routeProvider', function($routeProvider) {
     })
     .when('/favorites', {
       templateUrl: '/views/favorites.html',
-      controller: "FavoritesController"
+      controller: "PetController"
     })
     .otherwise({
       redirectTo: 'home'
