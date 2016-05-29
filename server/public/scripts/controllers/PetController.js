@@ -1,7 +1,7 @@
 myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
     $scope.animal = '';
     $scope.pet = {};
-    $scope.numFavs = 0;
+    $scope.totalFavs = 0;
     $scope.hidden = true;
 
     $scope.changeAnimal = function() {

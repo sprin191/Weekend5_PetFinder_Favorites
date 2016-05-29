@@ -1,21 +1,52 @@
-Angular API Pet Page Challenge
-You're going to making a single page web application with Angular and the PetFinder data API.
+Overview
+This weekend you will revisit the PetFinder API to create an application that flexes your knowledge of Angular, Angular routes, server-side logic, and Mongo/Mongoose!
 
-PetFinder API
-You'll need to sign up for a developer key in order to have access to the API URLs.
+Features
+In this application, your users will be able to
 
-Routes
-Create 3 separate routes in your Angular app, one each for 3 different kinds of pets available to search with the PetFinder API. Example: One for dogs, another for cats, and one for fish.
+select an animal type to view a random animal of that type
+save their favorite animals
+view a list of their favorite animals
+Reference this folder of application views as you read more about each feature below.
 
-Each route should have its own controller. When the view is changed your app should make a new JSONP request to PetFinder to get a random pet of that kind.
+Home Page
+When users first visit your web app, they will see
 
-Consult the PetFinder API documentation to see all the options available for the pet.Random call.
+a drop-down list of animal types -- this list is populated via an array of animal types. Animal types supported by the PetFinder API can be found in their API documentation.
+a link that takes them to a list of any favorited animals
+a count of the number of favorited animals
+Animal View
+Once an animal is selected from the drop-down list, the application will display a random pet of the selected animal type. This will require a call to the PetFinder API. The pet details should include, at least
 
-Display
-Display information about the pet on the DOM, formatted nicely with Bootstrap, Skeleton, or your own styles.
+an image of the pet
+the name of the pet
+the complete description of the pet
+Favorites Button
 
-HARD MODE
-Include images of the pet in the display. Note that images are available in three sizes. Only one of any image need be displayed. You'll need to use theng-src directive in your  element to get this to display.
+In addition, the user will have access to a button that adds the current pet to a list of favorites. The list of favorites will be saved to a database. The data needed includes
 
-PRO MODE
-Make a new route/view for listing Shelters. Use the API Documentation to see what information is available on shelters and make use of them.
+pet ID
+pet name
+pet image URL
+the first 100 characters of the pet's description
+Your Faves View
+When users navigate to this page, they will see a list of all of the animals they have favorited. This list will be pulled from the database.
+
+Advanced Modes
+So you're looking to do more?
+
+Hard Mode
+Get fancy! Use your own CSS styles to make this amazing!
+
+Pro Mode
+Modify the Favorites view to display animals grouped by animal type. Allow a user to delete a favorite. The count display needs to reflect this!
+
+Submission Instructions
+Submit your GitHub URL to the Prime Academy assignments app as usual.
+
+As a gut check, your base app should include the following...
+
+At least 2 angular routes -- one for finding a pet, one for displaying favorite pets
+A favorites counter that updates when an animal is favorited
+Ability to favorite an animal
+Ability to retrieve all favorited animals and see their pet ID, name, image, 100-character description

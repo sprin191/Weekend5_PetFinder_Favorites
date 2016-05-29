@@ -6,6 +6,10 @@ myApp.config(['$routeProvider', function($routeProvider) {
       templateUrl: '/views/home.html',
       controller: "PetController"
     })
+    .when('/favorites', {
+      templateUrl: '/views/favorites.html',
+      controller: "PetController"
+    })
     .otherwise({
       redirectTo: 'home'
     });
