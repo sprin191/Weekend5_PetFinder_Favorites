@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'Chewy';
+  src: url("/vendors/fonts/Chewy/Chewy.ttf");
+}
+
+@font-face {
+  font-family: 'Patua One';
+  src: url("/vendors/fonts/Patua_One/PatuaOne-Regular.ttf");
+}
+
+.pageTitle, .mainContainer, .animals {
+  text-align: center;
+}
+
+.jumbotron {
+  background-color: black;
+  color: #808080;
+}
+
+.header {
+  font-family: 'Chewy';
+}
+
+.pet a {
+  color: black;
+  font-family: 'Patua One';
+  font-size: 20px;
+}
+
+.petInfo, .pageTitle, button, .breeds, .footer {
+  font-family: 'Patua One';
+}
+
+img {
+  max-height: 500px;
+  width: auto;
+  margin-bottom: 5px;
+}
