@@ -3,7 +3,6 @@ myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
     $scope.pet = {};
     $scope.hidden = true;
     $scope.totalFavs = 0;
-    $scope.favInfo = {};
 
     $scope.changeAnimal = function() {
         console.log($scope.animal);
@@ -50,6 +49,7 @@ myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
             console.log('POST /favorite');
           });
       };
+
     /*$scope.saveFavorite = function() {
         var favorite = {
             petID: $scope.pet.id.$t,
