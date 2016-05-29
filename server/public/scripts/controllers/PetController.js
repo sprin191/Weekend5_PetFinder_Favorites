@@ -2,7 +2,18 @@ myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
     $scope.animal = '';
     $scope.pet = {};
     $scope.hidden = true;
-    $scope.totalFavs = 0;
+    $scope.allFavs = [];
+
+    getFavorites();
+
+    function getFavorites() {
+    $http.get('/favorite')
+    .then(function (response) {
+     $scope.allFavs = response.data;
+      console.log('GET /favorite ', response.data);
+
+    });
+    }
 
     $scope.changeAnimal = function() {
         console.log($scope.animal);
@@ -40,7 +51,9 @@ myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
           petID: $scope.pet.id.$t,
           name: $scope.pet.name.$t,
           image: $scope.pet.media.photos.photo[2].$t,
-          description: $scope.pet.description.$t
+          description: $scope.pet.description.$t.substring(0, 99),
+          city: $scope.pet.contact.city.$t,
+          state: $scope.pet.contact.state.$t
         };
         var data = $scope.favInfo;
         console.log(data);
@@ -49,30 +62,5 @@ myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
             console.log('POST /favorite');
           });
       };
-
-    /*$scope.saveFavorite = function() {
-        var favorite = {
-            petID: $scope.pet.id.$t,
-            petName: $scope.pet.name.$t,
-            description: '',
-            //image: ''
-        };
-
-        if($scope.pet.description.$t) {
-            favorite.description = $scope.pet.description.$t.substring(0, 99);
-        }
-
-        var photos = $scope.pet.media.photos;
-        console.log('Photos: ', photos);
-        if(photos !== undefined) {
-            favorite.image = $scope.pet.media.photos.photo[0].$t;
-        }
-
-        $scope.dataFactory.saveFavorite(favorite).then(function() {
-            $scope.numFavs = $scope.dataFactory.getNumFavorites();
-        });
-
-
-    };*/
 
 }]);

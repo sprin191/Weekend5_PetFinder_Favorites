@@ -2,7 +2,6 @@ myApp.controller('FavoritesController', ['$scope', '$http', function($scope, $ht
 
 $scope.allFavs = [];
 
-console.log('wassup');
 getFavorites();
 
 function getFavorites() {
