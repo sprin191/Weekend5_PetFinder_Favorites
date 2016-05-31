@@ -48,7 +48,7 @@ myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
         );
     };
 
-//Submits/saves the user's favorited animal. 
+//Submits/saves the user's favorited animal.
     $scope.submitFavorite = function () {
         $scope.favInfo = {
           petID: $scope.pet.id.$t,
@@ -63,6 +63,7 @@ myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
         $http.post('/favorite', data)
           .then(function () {
             console.log('POST /favorite');
+            getFavorites();
           });
       };
 
