@@ -30,7 +30,7 @@
     <div class="col-md-6 col-md-offset-3">
       <div class="mainContainer">
         <h2 class="petInfo">{{pet.name.$t}}</h2>
-        <img class="petPic" ng-src="{{pet.media.photos.photo[2].$t}}"/>
+        <img ng-if="pet.media.photos.photo[2].$t" class="petPic" ng-src="{{pet.media.photos.photo[2].$t}}"/>
         <h4 ng-hide="hidden" class="petInfo">{{pet.contact.city.$t}}, {{pet.contact.state.$t}}</h4>
       </div>
         <p>{{pet.description.$t}}</p>
