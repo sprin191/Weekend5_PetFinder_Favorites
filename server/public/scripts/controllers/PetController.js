@@ -54,7 +54,7 @@ myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
           petID: $scope.pet.id.$t,
           name: $scope.pet.name.$t,
           image: $scope.pet.media.photos.photo[2].$t,
-          description: $scope.pet.description.$t.substring(0, 99),
+          description: $scope.pet.description.$t.substring(0, 100),
           city: $scope.pet.contact.city.$t,
           state: $scope.pet.contact.state.$t
         };
