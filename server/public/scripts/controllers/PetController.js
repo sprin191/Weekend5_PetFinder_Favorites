@@ -4,6 +4,7 @@ myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
     $scope.hidden = true;
     $scope.allFavs = [];
 
+//Immediately retrieves favorited pet data at page load.
     getFavorites();
 
     function getFavorites() {
@@ -15,6 +16,7 @@ myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
     });
     }
 
+//Calls getRandomPet function when user selects a type of animal.
     $scope.changeAnimal = function() {
         console.log($scope.animal);
 
@@ -23,6 +25,7 @@ myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
         }
     };
 
+//Retrieves a random pet from the API database based on the user's selected animal type.
     $scope.getRandomPet = function() {
         // API key
         var key = 'b900e0d5e332753a460a64eaa8de00fd';
@@ -45,7 +48,7 @@ myApp.controller('PetController', ['$scope', '$http', function($scope, $http) {
         );
     };
 
-
+//Submits/saves the user's favorited animal. 
     $scope.submitFavorite = function () {
         $scope.favInfo = {
           petID: $scope.pet.id.$t,
